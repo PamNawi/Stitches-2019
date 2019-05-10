@@ -60,7 +60,7 @@ MonoBehaviour:
     />\r\n          <SequenceNode id=\"5\" />\r\n          <RepeatDecorator id=\"6\"
     />\r\n        </nodes>\r\n      </_nodes>\r\n    </BehaviorTree>\r\n    <RepeatDecorator
     id=\"6\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"462.375 90\" name=\"Repeat\" description=\"Repeats the execution of
+    position=\"462.375 89\" name=\"Repeat\" description=\"Repeats the execution of
     its child node\" cardinality=\"1\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <RepeatDecorator id=\"6\" />\r\n        </data>\r\n      </_data>\r\n
     \   </RepeatDecorator>\r\n    <SequenceNode id=\"5\">\r\n      <_data>\r\n        <data
@@ -80,7 +80,7 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"3\" />\r\n          <SequenceNode id=\"5\" />\r\n        </data>\r\n      </_data>\r\n
     \   </ActionNode>\r\n    <ActionNode id=\"4\">\r\n      <_data>\r\n        <data
-    breakpoint=\"0\" selected=\"False\" position=\"652.375 388\" name=\"Navigation/MoveToPosition\"
+    breakpoint=\"0\" selected=\"True\" position=\"652.375 388\" name=\"Navigation/MoveToPosition\"
     description=\"Moves the game object to a given position by using a NavMeshAgent\"
     cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n
     \         <ActionNode id=\"4\" />\r\n          <SequenceNode id=\"5\" />\r\n        </data>\r\n

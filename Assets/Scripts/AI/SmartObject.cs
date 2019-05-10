@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmartObject : MonoBehaviour
+public class SmartObject : BehaviorExecutor
 {
     //Behavior Component
     public List<NeedUpdate> changedNeed = new List<NeedUpdate>();
@@ -10,12 +10,7 @@ public class SmartObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Start();
+        this.enabled = false;
     }
 }

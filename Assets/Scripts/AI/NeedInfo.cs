@@ -6,6 +6,6 @@ using System;
 [CreateAssetMenu(fileName = "Need Information", menuName = "Stitches/Need", order = 0)]
 public class NeedInfo : ScriptableObject
 {
-    public string name;
+    public string needName;
     public AnimationCurve decay;
 }

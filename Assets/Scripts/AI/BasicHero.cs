@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof(BasicNeeds))]
+[RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
 public class BasicHero : MonoBehaviour
 {
-    public BasicNeeds personalNeeds;
+    BasicNeeds personalNeeds;
 
     SmartObjectManager soM;
     public SmartObject interacting = null;
+    UnityEngine.AI.NavMeshAgent navMeshAgent;
     // Start is called before the first frame update
     void Start()
     {
         personalNeeds = GetComponent<BasicNeeds>();
+        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         soM = GameObject.FindGameObjectWithTag("SmartObjectsManager").GetComponent<SmartObjectManager>();
     }
 
@@ -21,7 +24,7 @@ public class BasicHero : MonoBehaviour
     {
         if(!interacting)
         {
-            interacting = searchSmartObject();
+            interacting = searchSmartObject();            
         }
     }
 
@@ -32,13 +35,13 @@ public class BasicHero : MonoBehaviour
         SmartObject[] vSmartObjects = soM.getSmartObjects(this);
         foreach(SmartObject s in vSmartObjects){
             float impact = personalNeeds.calculateImpactOnHappiness(s.changedNeed);
-            Debug.Log(originalHappiness + impact);
-            if(originalHappiness + impact > majorHappiness){
+            if((originalHappiness + impact > majorHappiness) ||
+            (originalHappiness + impact == majorHappiness && Vector3.Distance(s.transform.position, transform.position) < Vector3.Distance(so.transform.position, transform.position)))
+            {
                 majorHappiness = originalHappiness + impact;
                 so = s;
             }
         }
-        Debug.Log(so);
         return so;
     }
 }
